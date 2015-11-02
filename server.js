@@ -28,13 +28,17 @@ server.on('connection', function (socket) {
     }
 	});
   function host(client) {
-    client.send(JSON.stringify('host'));
+    if (client.readyState === client.OPEN) {
+      client.send(JSON.stringify('host'));
+    }
     client.on('message', onMessage);
   }
   function onMessage (message) {
     messages.push(message);
     clients.forEach(function (target) {
-      target.send(message);
+      if (target.readyState === target.OPEN) {
+        target.send(message);
+      }
     });
   }
 });
