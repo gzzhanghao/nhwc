@@ -9,7 +9,6 @@ server.on('connection', function (socket) {
   if (clients.length === 1) {
     host(socket);
   } else {
-    console.log(JSON.stringify(messages));
     messages.forEach(function (message) {
       socket.send(message);
     });
