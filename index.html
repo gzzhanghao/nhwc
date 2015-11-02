@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<style>
+		html,
+		body {
+			margin: 0;
+			height: 100%;
+			overflow: hidden;
+		}
+		.promo {
+			position: fixed;
+		}
+    .picker {
+      display: none;
+      position: fixed;
+      bottom: 0;
+    }
+    .host .picker {
+      display: block;
+    }
+    .color {
+      border: 0;
+      width: 20px;
+      height: 20px;
+    }
+    .color.active {
+      box-shadow: 1px 1px 4px;
+    }
+	</style>
+</head>
+<body>
+	<h3 class="promo">
+  </h3>
+  <div class="picker">
+    <button class="color active" style="background: black" color="black"></button>
+    <button class="color" style="background: yellow" color="yellow"></button>
+    <button class="color" style="background: red" color="red"></button>
+    <button class="color" style="background: blue" color="blue"></button>
+    <button class="color" style="background: green" color="green"></button>
+  </div>
+	<canvas></canvas>
+	<script src="client.js"></script>
+</body>
+</html>
